@@ -26,9 +26,16 @@ jobs:
       with:
         node-version: 14.x
         cache: 'npm'
+        
     - name: Install Dependecies and Run Tests
       run: |
         npm install
         npm run test:unit
     - name: Custom step from the problem
       run: echo "bovfbovf"
+
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.SERVICE_ID }}
+        api-key: ${{ secrets.API_TOKEN }}
