@@ -26,6 +26,9 @@ jobs:
       with:
         node-version: 14.x
         cache: 'npm'
-    - run: npm install
-    - run: npm run test:unit
-    - run: echo "bovfbovf"
+    - name: Install Dependecies and Run Tests
+      run: |
+        npm install
+        npm run test:unit
+    - name: Custom step from the problem
+      run: echo "bovfbovf"
